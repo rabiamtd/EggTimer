@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Start Page Content -->
+    <div id="getStartedPage">
+        <div id="getStartedPageContainer">
+            <h1> Welcome!</h1>
+            <img src="./Media/egg graphic.png" alt="Egg Graphic" class="egg-graphic">
+            <button id="getStartedBtn" class="mainActionBtn">Start Cooking</button>
+        </div>
+    </div>
+
+    <!-- Configuration Page Content -->
+    <div id="configPage">
+        <h1>Customize</h1>
+        <div id="customizeOptionsContainer">
+            <div id="eggTypeContainer">
+                <h3>Egg Type</h3>
+                <button class="boilTypeBtn optionBtn" value="soft">Soft</button>
+                <button class="boilTypeBtn optionBtn" value="medium">Medium</button>
+                <button class="boilTypeBtn optionBtn" value="hard">Hard</button>
+                <br>
+            </div>
+            <div id="eggSizeContainer">
+                <h3>Egg Size</h3>
+                <button class="eggSizeBtn optionBtn" value="small">S</button>
+                <button class="eggSizeBtn optionBtn" value="medium">M</button>
+                <button class="eggSizeBtn optionBtn" value="large">L</button>
+                <br>
+            </div>
+            <button id="applyBtn" class="mainActionBtn ">Apply</button>
+        </div>
+    </div>
+    <!-- Timer Page Content -->
+    <div id="timerPage">
+        <p id="timerDisplay">00:00</p>
+        <button id="startBtn" class="mainActionBtn ">Start</button>
+    </div>
+    <script src="timer.js"></script>
+</body>
+
+</html>
