@@ -66,6 +66,34 @@ function updateButtonSelection(selectedButton, buttons) {
 
 
 
+applyBtn.addEventListener('click', () => {
+    // check if both boil type and egg size are selected
+    if (selectedBoilType && selectedEggSize) {
+        // calculate total time in seconds based on selected boil type and egg size
+        const totalTimeInSeconds = eggTimes[selectedBoilType][selectedEggSize];
+        // and display the timer with the calculated time
+        displayTimer(totalTimeInSeconds);
+        // then switch to the timer page to show the countdown
+        showTimerPage();
+    } else {
+        alert("Please select Boil Type and Egg Size");
+    }
+});
+
+// function to display timer in minutes and seconds format
+function displayTimer(totalTimeInSeconds) {
+    // calculate minutes and seconds from total time in seconds
+    const minutes = Math.floor(totalTimeInSeconds / 60);
+    const seconds = totalTimeInSeconds % 60;
+
+    // then format minutes and seconds as two digit strings using slice
+    const formattedMinutes = ('0' + minutes).slice(-2);
+    const formattedSeconds = ('0' + seconds).slice(-2);
+
+    // and update the timer display with the formatted time
+    timerDisplay.textContent = `${formattedMinutes}:${formattedSeconds}`;
+}
+
 function showStartCookingPage() {
     startCookingPage.style.display = "block";
     configPage.style.display = "none";
