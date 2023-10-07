@@ -68,7 +68,7 @@ applyBtn.addEventListener("click", () => {
         // then switch to the timer page to show the countdown
         showTimerPage();
     } else {
-        alert("Please select Boil Type and Egg Size");
+        showErrorModal();
     }
 });
 

@@ -22,6 +22,7 @@
 body {
     background: linear-gradient(to bottom, #f5d3d1, #fff3e1);
     /* Soft gradient background */
+    color: #493D2B;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -31,19 +32,18 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+
 h1 {
     font-family: "Raleway-Medium", sans-serif;
     color: #493D2B;
 }
 
-/* Start Cooking Page */
+/* Get Started Page */
 #startPage {
     height: 30%;
     display: block;
     text-align: center;
     color: #493D2B;
-    /* Set the text color */
-
 }
 
 #startPageContainer {
@@ -54,6 +54,65 @@ h1 {
     align-items: center;
 }
 
+.egg-graphic {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Config Page */
+#configPage {
+    text-align: center;
+}
+
+/* Timer Page */
+#timerDisplay {
+    font-size: 56px;
+    margin: 30px;
+}
+
+/* Button Styles */
+.mainActionBtn {
+    background-color: #ffcc99;
+    /* Softer, egg timer-related color */
+    color: #555;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    /* Drop shadow */
+}
+
+.optionBtn {
+    background: linear-gradient(to bottom, #ffedcc, #fff7e3);
+    /* Soft yellow */
+    color: #605040;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#applyBtn,
+#startBtn,
+#getStartedBtn {
+    background-color: #ff8080;
+    /* Soft pink */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    /* drop shadow */
+}
 
 .selected {
     background: linear-gradient(to bottom, #ffd699, #ffedcc);

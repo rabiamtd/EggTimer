@@ -51,15 +51,21 @@
 
     <!-- Reset Confirmation Modal -->
     <div id="resetModal" class="modal reset-modal">
-        <p>Are you sure you want to go back to customize your egg settings?</p>
+        <p>Your customized egg settings will be lost. Are you sure you want to go back and make changes?</p>
         <button id="resetConfirmBtn" class="mainActionBtn">Yes, Go Back</button>
         <button id="resetCancelBtn" class="mainActionBtn cancelBtn">Cancel</button>
     </div>
-
     <!-- Timer Completion Modal -->
     <div id="timeoutModal" class="modal timeout-modal">
         <p>Timer has run out!</p>
         <button id="timeoutCloseBtn" class="mainActionBtn">Close</button>
+    </div>
+    <!-- Modal for error message -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <p>Please select your Boil Type and Egg Size</p>
+            <button id="errorCloseBtn" class="mainActionBtn">Close</button>
+        </div>
     </div>
 
     <script src="./js/modal.js"></script>
