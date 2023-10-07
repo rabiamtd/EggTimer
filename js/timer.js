@@ -20,10 +20,10 @@ const eggTimes = {
 };
 
 // get DOM elements
-const startCookingPage = document.getElementById("startCookingPage");
+const getStartedPage = document.getElementById("getStartedPage");
 const configPage = document.getElementById("configPage");
 const timerPage = document.getElementById("timerPage");
-const startCookingBtn = document.getElementById("startCookingBtn");
+const getStartedBtn = document.getElementById("getStartedBtn");
 const applyBtn = document.getElementById("applyBtn");
 const startBtn = document.getElementById("startBtn");
 const timerDisplay = document.getElementById("timerDisplay");
@@ -34,8 +34,7 @@ let selectedBoilType = "";
 let selectedEggSize = "";
 let countdown;
 
-
-startCookingBtn.addEventListener("click", () => {
+getStartedBtn.addEventListener("click", () => {
     showConfigPage();
 });
 
@@ -47,26 +46,15 @@ boilTypeBtns.forEach((button) => {
     });
 });
 
+// add click event listeners to the egg size buttons
 eggSizeBtns.forEach((button) => {
     button.addEventListener("click", () => {
-        selectedBoilType = button.value;
+        selectedEggSize = button.value;
         updateButtonSelection(button, eggSizeBtns);
     })
 })
 
-function updateButtonSelection(selectedButton, buttons) {
-    buttons.forEach((button) => {
-        if (button === selectedButton) {
-            button.classList.add("selected");
-        } else {
-            button.classList.remove("selected");
-        }
-    });
-}
-
-
-
-applyBtn.addEventListener('click', () => {
+applyBtn.addEventListener("click", () => {
     // check if both boil type and egg size are selected
     if (selectedBoilType && selectedEggSize) {
         // calculate total time in seconds based on selected boil type and egg size
@@ -78,6 +66,10 @@ applyBtn.addEventListener('click', () => {
     } else {
         alert("Please select Boil Type and Egg Size");
     }
+});
+
+startBtn.addEventListener("click", () => {
+    startTimer();
 });
 
 // function to display timer in minutes and seconds format
@@ -94,24 +86,69 @@ function displayTimer(totalTimeInSeconds) {
     timerDisplay.textContent = `${formattedMinutes}:${formattedSeconds}`;
 }
 
-function showStartCookingPage() {
-    startCookingPage.style.display = "block";
+function showgetStartedPage() {
+    getStartedPage.style.display = "block";
     configPage.style.display = "none";
     timerPage.style.display = "none";
 }
 
 function showConfigPage() {
-    startCookingPage.style.display = "none";
+    getStartedPage.style.display = "none";
     configPage.style.display = "block";
     timerPage.style.display = "none";
 }
 
 function showTimerPage() {
-    startCookingPage.style.display = "none";
+    getStartedPage.style.display = "none";
     configPage.style.display = "none";
     timerPage.style.display = "block";
 }
 
 
+// function to start the countdown timer based on the displayed time
+function startTimer() {
+    // get the displayed time from the timer display and parse minutes and seconds
+    const displayedTime = timerDisplay.textContent.split(':');
+    const minutes = parseInt(displayedTime[0]);
+    const seconds = parseInt(displayedTime[1]);
+
+    // calculate total time in seconds
+    const totalTimeInSeconds = minutes * 60 + seconds;
+
+    // initialize the countdown timer with the total time
+    let totalTime = totalTimeInSeconds;
+
+    // start a countdown interval that updates the timer every second
+    countdown = setInterval(() => {
+        // check if the total time has elapsed
+        if (totalTime <= 0) {
+            // clear the interval, set timer display to '00:00', show alert, and go back to configuration page
+            clearInterval(countdown);
+            timerDisplay.textContent = "00:00";
+            showModal();
+        } else {
+            // decrement the total time by 1 second and update the timer display
+            totalTime--;
+            displayTimer(totalTime);
+        }
+    }, 1000);
+}
+
+// close the modal when the close button is clicked
+closeModalBtn.addEventListener("click", () => {
+    closeModal();
+    showConfigPage(); // go back to the configuration page after closing the modal
+});
+
+function updateButtonSelection(selectedButton, buttons) {
+    buttons.forEach((button) => {
+        if (button === selectedButton) {
+            button.classList.add("selected");
+        } else {
+            button.classList.remove("selected");
+        }
+    });
+}
+
 // initially show Start Cooking Page
-showStartCookingPage();
+showgetStartedPage();

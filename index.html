@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -10,14 +11,13 @@
 
 <body>
     <!-- Start Cooking Page Content -->
-    <div id="startCookingPage">
-        <div id="startCookingPageContainer">
+    <div id="getStartedPage">
+        <div id="getStartedPageContainer">
             <h1> Welcome!</h1>
             <img src="./Media/egg graphic.png" alt="Egg Graphic" class="egg-graphic">
-            <button id="startCookingBtn" class="mainActionBtn">Start Cooking</button>
+            <button id="getStartedBtn" class="mainActionBtn">Start Cooking</button>
         </div>
     </div>
-
     <!-- Configuration Page Content -->
     <div id="configPage">
         <h1>Customize</h1>
@@ -44,7 +44,16 @@
         <p id="timerDisplay">00:00</p>
         <button id="startBtn" class="mainActionBtn ">Start</button>
     </div>
-    <script src="timer.js"></script>
+    <!-- Modal -->
+    <div id="overlay" class="overlay">
+        <div id="modal" class="modal">
+            <p>modal message here</p>
+            <button id="closeModalBtn">Close</button>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
+    <script src="./js/timer.js"></script>
 </body>
 
 </html>

@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Raleway-Medium";
-    src: url("./Fonts/Raleway/static/Raleway-Medium.ttf");
+    src: url("../Fonts/Raleway/static/Raleway-Medium.ttf");
 }
 
 @font-face {
     font-family: "Raleway-Regular";
-    src: url("./Fonts/Raleway/static/Raleway-Regular.ttf");
+    src: url("../Fonts/Raleway/static/Raleway-Regular.ttf");
 }
 
 @font-face {
     font-family: "Roboto";
-    src: url("./Fonts/Roboto/Roboto-Regular.ttf");
+    src: url("../Fonts/Roboto/Roboto-Regular.ttf");
 }
 
 * {
