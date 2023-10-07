@@ -26,6 +26,7 @@ const timerPage = document.getElementById("timerPage");
 const getStartedBtn = document.getElementById("getStartedBtn");
 const applyBtn = document.getElementById("applyBtn");
 const startBtn = document.getElementById("startBtn");
+const stopBtn = document.getElementById("stopBtn");
 const timerDisplay = document.getElementById("timerDisplay");
 const boilTypeBtns = document.querySelectorAll(".boilTypeBtn");
 const eggSizeBtns = document.querySelectorAll(".eggSizeBtn");
@@ -72,6 +73,20 @@ startBtn.addEventListener("click", () => {
     startTimer();
 });
 
+stopBtn.addEventListener("click", () => {
+    showResetModal();
+});
+
+resetConfirmBtn.addEventListener("click", () => {
+    resetTimer();
+    hideResetModal();
+    showConfigPage();
+});
+
+resetCancelBtn.addEventListener("click", () => {
+    hideResetModal();
+});
+
 // function to display timer in minutes and seconds format
 function displayTimer(totalTimeInSeconds) {
     // calculate minutes and seconds from total time in seconds
@@ -107,6 +122,7 @@ function showTimerPage() {
 
 // function to start the countdown timer based on the displayed time
 function startTimer() {
+    isTimerRunning = true;
     // get the displayed time from the timer display and parse minutes and seconds
     const displayedTime = timerDisplay.textContent.split(':');
     const minutes = parseInt(displayedTime[0]);
@@ -125,7 +141,7 @@ function startTimer() {
             // clear the interval, set timer display to '00:00', show alert, and go back to configuration page
             clearInterval(countdown);
             timerDisplay.textContent = "00:00";
-            showModal();
+            showTimeoutModal();
         } else {
             // decrement the total time by 1 second and update the timer display
             totalTime--;
@@ -135,10 +151,15 @@ function startTimer() {
 }
 
 // close the modal when the close button is clicked
-closeModalBtn.addEventListener("click", () => {
-    closeModal();
-    showConfigPage(); // go back to the configuration page after closing the modal
+timeoutCloseBtn.addEventListener("click", () => {
+    hideTimeoutModal();
 });
+
+function resetTimer() {
+    isTimerRunning = false;
+    clearInterval(countdown); // clear the countdown interval
+    timerDisplay.textContent = "00:00"; // reset timer display
+}
 
 function updateButtonSelection(selectedButton, buttons) {
     buttons.forEach((button) => {

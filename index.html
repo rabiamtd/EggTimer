@@ -43,13 +43,22 @@
     <div id="timerPage">
         <p id="timerDisplay">00:00</p>
         <button id="startBtn" class="mainActionBtn ">Start</button>
+        <button id="stopBtn" class="mainActionBtn">Stop</button>
     </div>
-    <!-- Modal -->
-    <div id="overlay" class="overlay">
-        <div id="modal" class="modal">
-            <p>modal message here</p>
-            <button id="closeModalBtn">Close</button>
-        </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Reset Confirmation Modal -->
+    <div id="resetModal" class="modal reset-modal">
+        <p>Are you sure you want to stop the timer?</p>
+        <button id="resetConfirmBtn" class="mainActionBtn">Yes</button>
+        <button id="resetCancelBtn" class="mainActionBtn cancelBtn">Cancel</button>
+    </div>
+
+    <!-- Timer Completion Modal -->
+    <div id="timeoutModal" class="modal timeout-modal">
+        <p>Timer has run out!</p>
+        <button id="timeoutCloseBtn" class="mainActionBtn">Close</button>
     </div>
 
     <script src="./js/modal.js"></script>

@@ -1,13 +1,41 @@
 "use strict";
 
 const overlay = document.getElementById("overlay");
-const modal = document.getElementById("modal");
-const closeModalBtn = document.getElementById("closeModalBtn");
+const resetModal = document.getElementById("resetModal");
+const timeoutModal = document.getElementById("timeoutModal");
+const resetConfirmBtn = document.getElementById("resetConfirmBtn");
+const resetCancelBtn = document.getElementById("resetCancelBtn");
+const timeoutCloseBtn = document.getElementById("timeoutCloseBtn");
 
-function showModal() {
-    overlay.style.display = "flex";
+let isTimerRunning = false;
+
+
+// function to show the reset modal
+function showResetModal() {
+    if (isTimerRunning) {
+        overlay.style.display = "block";
+        resetModal.style.display = "block";
+    }
 }
 
-function closeModal() {
+// function to hide the reset modal
+function hideResetModal() {
     overlay.style.display = "none";
+    resetModal.style.display = "none";
 }
+
+// function to show the timeout modal
+function showTimeoutModal() {
+    overlay.style.display = "block";
+    timeoutModal.style.display = "block";
+}
+
+// function to hide the timeout modal
+function hideTimeoutModal() {
+    overlay.style.display = "none";
+    timeoutModal.style.display = "none";
+}
+
+resetCancelBtn.addEventListener("click", () => {
+    hideResetModal();
+});
