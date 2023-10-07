@@ -1,5 +1,32 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("./Fonts/Raleway/static/Raleway-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./Fonts/Roboto/Roboto-Regular.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #f5d3d1, #fff3e1);
+    /* Soft gradient background */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    font-family: "Raleway", sans-serif;
+    color: #493D2B;
 }
