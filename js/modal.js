@@ -7,15 +7,10 @@ const resetConfirmBtn = document.getElementById("resetConfirmBtn");
 const resetCancelBtn = document.getElementById("resetCancelBtn");
 const timeoutCloseBtn = document.getElementById("timeoutCloseBtn");
 
-let isTimerRunning = false;
-
-
 // function to show the reset modal
 function showResetModal() {
-    if (isTimerRunning) {
-        overlay.style.display = "block";
-        resetModal.style.display = "block";
-    }
+    overlay.style.display = "block";
+    resetModal.style.display = "block";
 }
 
 // function to hide the reset modal

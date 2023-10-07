@@ -23,10 +23,13 @@ const eggTimes = {
 const getStartedPage = document.getElementById("getStartedPage");
 const configPage = document.getElementById("configPage");
 const timerPage = document.getElementById("timerPage");
+
 const getStartedBtn = document.getElementById("getStartedBtn");
 const applyBtn = document.getElementById("applyBtn");
 const startBtn = document.getElementById("startBtn");
-const stopBtn = document.getElementById("stopBtn");
+const pauseBtn = document.getElementById("pauseBtn");
+const backBtn = document.getElementById("backBtn");
+
 const timerDisplay = document.getElementById("timerDisplay");
 const boilTypeBtns = document.querySelectorAll(".boilTypeBtn");
 const eggSizeBtns = document.querySelectorAll(".eggSizeBtn");
@@ -73,7 +76,11 @@ startBtn.addEventListener("click", () => {
     startTimer();
 });
 
-stopBtn.addEventListener("click", () => {
+pauseBtn.addEventListener("click", () => {
+    resetTimer();
+});
+
+backBtn.addEventListener("click", () => {
     showResetModal();
 });
 
@@ -114,6 +121,7 @@ function showConfigPage() {
 }
 
 function showTimerPage() {
+    pauseBtn.disabled = true;
     getStartedPage.style.display = "none";
     configPage.style.display = "none";
     timerPage.style.display = "block";
@@ -122,7 +130,11 @@ function showTimerPage() {
 
 // function to start the countdown timer based on the displayed time
 function startTimer() {
-    isTimerRunning = true;
+    // enable stop button when the timer starts
+    pauseBtn.disabled = false;
+    // disable back button when the timer starts
+    backBtn.disabled = true;
+
     // get the displayed time from the timer display and parse minutes and seconds
     const displayedTime = timerDisplay.textContent.split(':');
     const minutes = parseInt(displayedTime[0]);
@@ -153,12 +165,13 @@ function startTimer() {
 // close the modal when the close button is clicked
 timeoutCloseBtn.addEventListener("click", () => {
     hideTimeoutModal();
+    showConfigPage();
 });
 
 function resetTimer() {
-    isTimerRunning = false;
+    // enable back button when the timer is reset
+    backBtn.disabled = false;
     clearInterval(countdown); // clear the countdown interval
-    timerDisplay.textContent = "00:00"; // reset timer display
 }
 
 function updateButtonSelection(selectedButton, buttons) {
