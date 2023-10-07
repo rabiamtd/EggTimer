@@ -1,6 +1,11 @@
 @font-face {
-    font-family: "Raleway";
+    font-family: "Raleway-Medium";
     src: url("./Fonts/Raleway/static/Raleway-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Raleway-Regular";
+    src: url("./Fonts/Raleway/static/Raleway-Regular.ttf");
 }
 
 @font-face {
@@ -27,6 +32,31 @@ body {
 }
 
 h1 {
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway-Medium", sans-serif;
+    color: #493D2B;
+}
+
+/* Start Cooking Page */
+#startPage {
+    height: 30%;
+    display: block;
+    text-align: center;
+    color: #493D2B;
+    /* Set the text color */
+
+}
+
+#startPageContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+
+.selected {
+    background: linear-gradient(to bottom, #ffd699, #ffedcc);
     color: #493D2B;
 }
