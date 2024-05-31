@@ -12,26 +12,25 @@ const timeoutCloseBtn = document.getElementById("timeoutCloseBtn");
 const errorModal = document.getElementById("errorModal");
 const errorCloseBtn = document.getElementById("errorCloseBtn");
 
+const instructionsModal = document.getElementById("instructionsModal");
+const instructionsCloseBtn = document.getElementById("instructionsCloseBtn");
 
-// function to show the reset modal
+
 function showResetModal() {
     overlay.style.display = "block";
     resetModal.style.display = "block";
 }
 
-// function to hide the reset modal
 function hideResetModal() {
     overlay.style.display = "none";
     resetModal.style.display = "none";
 }
 
-// function to show the timeout modal
 function showTimeoutModal() {
     overlay.style.display = "block";
     timeoutModal.style.display = "block";
 }
 
-// function to hide the timeout modal
 function hideTimeoutModal() {
     overlay.style.display = "none";
     timeoutModal.style.display = "none";
@@ -42,10 +41,23 @@ resetCancelBtn.addEventListener("click", () => {
 });
 
 function showErrorModal() {
+    overlay.style.display = "block";
     errorModal.style.display = "block";
 }
 function closeErrorModal() {
     errorModal.style.display = "none";
+    overlay.style.display = "none";
 }
 
 errorCloseBtn.addEventListener("click", closeErrorModal);
+
+
+function showInstructionsModal() {
+    overlay.style.display = "block";
+    instructionsModal.style.display = "block";
+}
+function closeInstructionsModal() {
+    instructionsModal.style.display = "none";
+    overlay.style.display = "none";
+}
+instructionsCloseBtn.addEventListener("click", closeInstructionsModal);

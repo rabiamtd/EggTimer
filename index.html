@@ -2,69 +2,129 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="./css/root.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/modal.css">
+    <script src="https://kit.fontawesome.com/c640994c39.js" crossorigin="anonymous"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Eggy - Perfectly Boiled Eggs Every Time!</title>
 </head>
 
 <body>
     <!-- Start Cooking Page Content -->
     <div id="getStartedPage">
         <div id="getStartedPageContainer">
-            <h1> Welcome!</h1>
-            <img src="./Media/egg graphic.png" alt="Egg Graphic" class="egg-graphic">
+            <h1>Eggy</h1>
+            <div class="egg-container">
+                <img src="./Media/egg graphic.png" alt="Egg Graphic" class="egg-graphic">
+            </div>
             <button id="getStartedBtn" class="mainActionBtn">Start Cooking</button>
         </div>
     </div>
+
     <!-- Configuration Page Content -->
     <div id="configPage">
-        <h1>Customize</h1>
-        <div id="customizeOptionsContainer">
-            <div id="eggTypeContainer">
-                <h3>Egg Type</h3>
-                <button class="boilTypeBtn optionBtn" value="soft">Soft</button>
-                <button class="boilTypeBtn optionBtn" value="medium">Medium</button>
-                <button class="boilTypeBtn optionBtn" value="hard">Hard</button>
-                <br>
+        <div id="configPageContainer">
+            <div class="heading-container">
+                <h1 class="pageHeading">Customize</h1>
+                <div class="info-container">
+                    <p>info</p>
+                    <i class="fa-solid fa-info"></i>
+                </div>
             </div>
-            <div id="eggSizeContainer">
-                <h3>Egg Size</h3>
-                <button class="eggSizeBtn optionBtn" value="small">S</button>
-                <button class="eggSizeBtn optionBtn" value="medium">M</button>
-                <button class="eggSizeBtn optionBtn" value="large">L</button>
-                <br>
+            <div id="customizeOptionsContainer">
+                <div id="eggTypeContainer" class="optionGroupContainer">
+                    <h3 class="optionGroupHeading">Egg Type</h3>
+                    <div class="buttonGroup">
+                        <button class="boilTypeBtn optionBtn" value="soft">Soft</button>
+                        <button class="boilTypeBtn optionBtn" value="medium">Medium</button>
+                        <button class="boilTypeBtn optionBtn" value="hard">Hard</button>
+                    </div>
+                </div>
+                <div id="eggSizeContainer" class="optionGroupContainer">
+                    <h3 class="optionGroupHeading">Egg Size</h3>
+                    <div class="buttonGroup">
+                        <button class="eggSizeBtn optionBtn" value="small">S</button>
+                        <button class="eggSizeBtn optionBtn" value="medium">M</button>
+                        <button class="eggSizeBtn optionBtn" value="large">L</button>
+                        <button class="eggSizeBtn optionBtn" value="xl">XL</button>
+                    </div>
+                </div>
+                <button id="applyBtn" class="mainActionBtn">Apply</button>
             </div>
-            <button id="applyBtn" class="mainActionBtn ">Apply</button>
         </div>
+
     </div>
+
     <!-- Timer Page Content -->
     <div id="timerPage">
-        <button id="backBtn" class="mainActionBtn">Back</button>
-        <p id="timerDisplay">00:00</p>
-        <button id="startBtn" class="mainActionBtn ">Start</button>
-        <button type="button" id="pauseBtn" class="mainActionBtn">Pause</button>
+        <div id="timerPageContainer">
+            <div class="return-container">
+                <i class="fa-solid fa-chevron-left" id="backBtn"></i>
+            </div>
+            <h1>Time to boil!</h1>
+            <div class="egg-container" id="timer-egg-container">
+                <img class="egg-graphic" id="timer-egg-graphic" src="./Media/egg graphic.png" alt="Egg Graphic">
+            </div>
+            <p id="timerDisplay">00:00</p>
+
+            <div class="startBtn-container">
+                <div class="start-button-overlay"></div>
+                <button id="startBtn" class="mainActionBtn">Start</button>
+            </div>
+        </div>
     </div>
-
     <div id="overlay" class="overlay"></div>
-
     <!-- Reset Confirmation Modal -->
     <div id="resetModal" class="modal reset-modal">
-        <p>Your customized egg settings will be lost. Are you sure you want to go back and make changes?</p>
-        <button id="resetConfirmBtn" class="mainActionBtn">Yes, Go Back</button>
-        <button id="resetCancelBtn" class="mainActionBtn cancelBtn">Cancel</button>
+        <div class="modal-content">
+            <p>Your customized boil settings will be lost. Are you sure you want to go back and make changes?</p>
+            <button id="resetConfirmBtn" class="">Yes, Go Back</button>
+            <button id="resetCancelBtn" class="cancelBtn">Cancel</button>
+        </div>
     </div>
     <!-- Timer Completion Modal -->
     <div id="timeoutModal" class="modal timeout-modal">
-        <p>Timer has run out!</p>
-        <button id="timeoutCloseBtn" class="mainActionBtn">Close</button>
+        <div class="modal-content">
+            <p>Your eggs are ready!</p>
+            <button id="timeoutCloseBtn" class="">Close</button>
+        </div>
     </div>
     <!-- Modal for error message -->
     <div id="errorModal" class="modal">
         <div class="modal-content">
             <p>Please select your Boil Type and Egg Size</p>
-            <button id="errorCloseBtn" class="mainActionBtn">Close</button>
+            <button id="errorCloseBtn" class="">Close</button>
+        </div>
+    </div>
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content instructions-content">
+            <h2>Step-by-Step guide to perfectly boiled eggs</h2>
+            <ol>
+                <li>
+                    <p>Customize your egg boiling preferences using Eggy's intuitive interface.</p>
+                </li>
+                <li>
+                    <p>In a pot, bring water to a gentle boil.</p>
+                </li>
+                <li>
+                    <p>Lower your eggs into the water.</p>
+                </li>
+                <li>
+                    <p>Start the timer based on your desired level of doneness.</p>
+                </li>
+                <li>
+                    <p>Adjust the heat slightly to maintain a gentle boil.</p>
+                </li>
+                <li>
+                    <p>When the timer ends, transfer the eggs into a bowl of cold water for perfect peeling</p>
+                </li>
+            </ol>
+            <p>Enjoy your flawlessly boiled eggs, tailored to your preference, hassle-free with Eggy!</p>
+
+            <button id="instructionsCloseBtn" class="mainActionBtn">Close</button>
         </div>
     </div>
 

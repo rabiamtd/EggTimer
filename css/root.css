@@ -1,0 +1,14 @@
+:root {
+    --background-gradient-start: rgba(255, 227, 179, 0.8);
+    --background-gradient-end: rgba(255, 252, 207, 0.8);
+    --text-color: #493D2B;
+
+    --option-btn-gradient-start: rgba(245, 245, 245, 0.8);
+    --option-btn-gradient-end: rgba(255, 255, 255, 0.8);
+
+    --main-btn-background: rgba(255, 190, 190, 0.8);
+    --main-btn-text: #493D2B;
+
+    --selected-btn-gradient-start: rgba(255, 214, 214, 0.8);
+    --selected-btn-gradient-end: rgba(255, 237, 237, 0.8);
+}
