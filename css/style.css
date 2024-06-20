@@ -30,13 +30,13 @@ body {
     height: 100vh;
     padding: 20px;
     font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
 }
 
 button {
     font-family: "Roboto";
 }
 
-/* Heading Styles */
 h1,
 h2 {
     font-family: "Raleway-Medium", sans-serif;
@@ -44,7 +44,10 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Get Started Page */
+h1.pageHeading {
+    font-size: 1.5rem;
+}
+
 #getStartedPage {
     text-align: center;
     color: var(--text-color);
@@ -62,7 +65,6 @@ h2 {
     margin: 0 auto;
 }
 
-/* Media */
 .egg-graphic {
     width: 150px;
     height: auto;
@@ -91,7 +93,6 @@ h2 {
     border-radius: 80px / 4px;
 }
 
-/* Config Page */
 #configPage {
     height: 100%;
     max-width: 95%;
@@ -162,7 +163,6 @@ h2 {
     margin-top: 20vh;
 }
 
-/* Timer Page */
 #timerPage {
     text-align: center;
     height: 100%;
@@ -203,7 +203,6 @@ h2 {
     width: 173px;
 }
 
-/* Button Styles */
 .mainActionBtn {
     background-color: var(--main-btn-background);
     color: var(--main-btn-text);
@@ -261,7 +260,6 @@ h2 {
     transform: scale(1.05);
 }
 
-
 .selected {
     background: linear-gradient(to bottom, var(--selected-btn-gradient-start), var(--selected-btn-gradient-end));
     color: var(--text-color);
@@ -291,5 +289,69 @@ h2 {
 
     100% {
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    h1,
+    h2 {
+        font-size: 2rem;
+    }
+
+    .mainActionBtn {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .optionBtn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    #applyBtn {
+        margin-top: 10vh;
+    }
+
+    .egg-graphic {
+        width: 120px;
+    }
+
+    #timerDisplay {
+        font-size: 48px;
+    }
+
+    #timerPageContainer {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1,
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .mainActionBtn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .optionBtn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #applyBtn {
+        margin-top: 5vh;
+    }
+
+    .egg-graphic {
+        width: 100px;
+    }
+
+    #timerDisplay {
+        font-size: 36px;
     }
 }
